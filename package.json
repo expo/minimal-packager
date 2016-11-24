@@ -1,0 +1,15 @@
+{
+  "name": "@exponent/minimal-packager",
+  "version": "1.0.0",
+  "description": "A minimal Exponent-friendly packager and nothing else. Built for Deco integration, you probably don't want to use it otherwise.",
+  "repository": "https://github.com/exponentjs/minimal-packager",
+  "main": "cli.js",
+  "bin": {
+    "emp": "./cli.js"
+  },
+  "author": "Brent Vatne <brent@getexponent.com>",
+  "license": "MIT",
+  "dependencies": {
+    "xdl": "^0.25.0"
+  }
+}
