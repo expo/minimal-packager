@@ -8,15 +8,11 @@ const {
 
 let projectRoot = process.cwd();
 
-function formatMsg(msg) {
-  return msg.replace(/(.{120})/g, "$1\n");
-}
-
 Project.startAsync(projectRoot, {reset: true}).then(manifest => {
   ProjectUtils.attachLoggerStream(projectRoot, {
     stream: {
       write: (chunk) => {
-        console.log(`[${chunk.tag}] ${formatMsg(chunk.msg)}`);
+        console.log(`[${chunk.tag}] ${chunk.msg}`);
       },
     },
     type: 'raw',
