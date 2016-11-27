@@ -8,16 +8,16 @@ const {
 
 let projectRoot = process.cwd();
 
-Project.startAsync(projectRoot, {reset: true}).then(manifest => {
-  ProjectUtils.attachLoggerStream(projectRoot, {
-    stream: {
-      write: (chunk) => {
-        console.log(`[${chunk.tag}] ${chunk.msg}`);
-      },
+ProjectUtils.attachLoggerStream(projectRoot, {
+  stream: {
+    write: (chunk) => {
+      console.log(`[${chunk.tag}] ${chunk.msg}`);
     },
-    type: 'raw',
-  });
+  },
+  type: 'raw',
+});
 
+Project.startAsync(projectRoot, {reset: true}).then(manifest => {
   Project.getUrlAsync(projectRoot).then(url => {
     console.log(`Serving project at: ${url}`);
   });
